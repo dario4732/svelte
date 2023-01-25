@@ -1,9 +1,17 @@
 <script>
+    import Tarea from "./Tarea.svelte";
+    import Await from "./Await.svelte";
     export let prg;
     export let idCliente; 
     export let deuda;
     let tarjetas=["master","visa","American"]
     let ser=""
+    let elementos=[{id:211,nombre:"Visa",estado:false,cuotas:3},
+                   {id:21,nombre:"Master",estado:true,cuotas:12},
+                   {id:909090,nombre:"Amex",estado:false,cuotas:6},
+                   {id:823333,nombre:"Cabal",estado:false,cuotas:1},
+                   {id:212123333,nombre:"Crediguia",estado:false,cuotas:4}
+                  ]
     
  function ver(e){
  const target= e.target;
@@ -14,7 +22,7 @@
  
 <h1>Modulo de {prg} </h1>
 <hr>
-<p>Su codigo de cliente es  {idCliente} y  su deuda es de $ {deuda}</p>
+<p>Su codigo de cliente es <strong>{idCliente}</strong>   y  su deuda es de $ <strong>{deuda}</strong> </p>
 
 
  
@@ -26,15 +34,18 @@
 {/if}
 
 <hr>
-{#each tarjetas as tar}
-    {#if tar=="master"}    
-        <tr>{tar} con  25 de recargo</tr>
-    {/if}
-    {#if tar=="visa"}    
-        <tr>{tar} con  1    5 de recargo</tr>
-    {/if}
+<p>Usted puede Abonar con las siguientes tarjetas</p>
+<hr>    
+{#each elementos as e,num(e.id)}
+
+<div>
+  <Tarea nombre={e.nombre} estado={e.estado} cuotas={e.cuotas} id={e.id} /> 
+</div>
 
 {/each}
+<hr>
+<Await/>
+
 <style>
     h1{
         color: cadetblue;

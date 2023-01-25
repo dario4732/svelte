@@ -1,7 +1,10 @@
 <script>
 import { text } from "svelte/internal";
 import Interior from "./interior.svelte";
+
+
 export let  valor;
+export let idCliente
  let nombre="";
  function gestionarClick(){
    alert("ok");
@@ -17,7 +20,7 @@ nombre= e.target.value;
 
 
 <h1>Svelte</h1>
-<Interior prg="Ventas" idCliente=11 deuda={valor}/>
+<Interior prg="Ventas" idCliente={idCliente} deuda={valor}/>
 
 <hr>
 
