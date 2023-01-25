@@ -1,4 +1,9 @@
 <script>
+    import App from "./App.svelte";
+    import Await from "./Await.svelte";
+
+
+
     export let nombre;
     export let estado;
     export let cuotas;
@@ -12,6 +17,11 @@
    {:else}
    <p> Id de tarjeta <strong>{id } </strong> {nombre} en {cuotas} cuotas</p> 
 {/if}
+
+
+
+
+
 <style>
 
     .tachado{

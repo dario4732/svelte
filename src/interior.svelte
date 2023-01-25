@@ -1,6 +1,7 @@
 <script>
     import Tarea from "./Tarea.svelte";
     import Await from "./Await.svelte";
+    import Bind from "./Bind.svelte";
     export let prg;
     export let idCliente; 
     export let deuda;
@@ -46,6 +47,8 @@
 <hr>
 <Await/>
 
+<hr>
+<Bind/>
 <style>
     h1{
         color: cadetblue;
