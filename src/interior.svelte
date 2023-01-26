@@ -2,6 +2,7 @@
     import Tarea from "./Tarea.svelte";
     import Await from "./Await.svelte";
     import Bind from "./Bind.svelte";
+    import Binthis from "./Binthis.svelte";
     export let prg;
     export let idCliente; 
     export let deuda;
@@ -49,6 +50,9 @@
 
 <hr>
 <Bind/>
+
+<hr>
+<Binthis/>
 <style>
     h1{
         color: cadetblue;
